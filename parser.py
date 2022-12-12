@@ -6,8 +6,8 @@ with open("film.html") as file:
 
 soup = bs(src, "lxml")
 
-title_1 = soup.title
-title_2 = soup.find("div", class_="sc-dae4a1bc-0 gwBsXc")
+title_ukr = soup.title
+title_eng = soup.find("div", class_="sc-dae4a1bc-0 gwBsXc")
 
 raiting = soup.find("span", class_="sc-7ab21ed2-1 jGRxWM")
 
@@ -28,8 +28,8 @@ writers = soup.find_all("a", class_="ipc-metadata-list-item__list-content-item i
 
 actors = soup.find_all("a", class_="sc-bfec09a1-1 gfeYgX")
 
-print(f"{title_2.text.strip()}")
-#print(f"Ukrainian title: {title_1.text}") не знаю як перевести в нормальне кодування
+print(f"{title_eng.text.strip()}")
+#print(f"Ukrainian title: {title_ukr.text}") не знаю як перевести в нормальне кодування
 print(f"\nYear of data: {year.text}")
 print(f"\nDuration of the film: {''.join(duration_without_spacebar)}")
 print(f"\nRaiting: {raiting.text}|10")
